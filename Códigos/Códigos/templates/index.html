@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Controle de Validação de Equipamentos RD</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="login-page">
+    <main class="container">
+        <div class="card">
+            <div class="hero">
+                <div class="hero-icon">⚡</div>
+                <div>
+                    <span class="brand-tag">Engenharia Elétrica</span>
+                    <h1>Controle de Validação de Equipamentos RD</h1>
+                    <p class="subtitle">Informe seu nome para acessar o ambiente</p>
+                </div>
+            </div>
+            <form action="/dashboard" method="POST">
+                <label for="nome">Nome do usuário</label>
+                <input type="text" id="nome" name="nome" placeholder="Ex: Carlos" required>
+                <button type="submit">Acessar</button>
+            </form>
+            <p class="footer-note">Aplicação local para controle e acompanhamento das validações de equipamentos RD</p>
+        </div>
+    </main>
+</body> </html>

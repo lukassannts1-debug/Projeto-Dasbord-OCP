@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload de Dados | Validação RD</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body.upload-page { 
+            background-color: #0b141e; 
+            color: #fff; 
+            font-family: sans-serif; 
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .upload-card {
+            background: #1a2a3a;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid rgba(0, 255, 136, 0.2);
+            width: 100%;
+            max-width: 500px;
+        }
+        .upload-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        input[type="file"] {
+            margin: 20px 0;
+            padding: 10px;
+            background: #2a3f54;
+            border-radius: 6px;
+            width: 100%;
+            box-sizing: border-box;
+            color: #fff;
+        }
+        .btn-upload {
+            background: #00ff88;
+            color: #0b141e;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1rem;
+        }
+        .btn-upload:hover {
+            background: #00cc6a;
+        }
+        .btn-voltar {
+            display: block;
+            margin-top: 15px;
+            color: #00ff88;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body class="upload-page">
+
+    <div class="upload-card">
+        <div class="upload-icon">📁</div>
+        <h2>Importar Base de Equipamentos</h2>
+        <p style="color: #a0aec0; font-size: 0.9rem;">Selecione o arquivo com os dados dos ativos (.xlsx, .csv)</p>
+        
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <input type="file" name="documento" accept=".xlsx, .xls, .csv" required>
+            <button type="submit" class="btn-upload">Processar Arquivo</button>
+        </form>
+
+        <a href="/dashboard" class="btn-voltar">Voltar ao Dashboard</a>
+    </div>
+
+</body>
+</html>
